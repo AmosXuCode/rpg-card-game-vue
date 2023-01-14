@@ -1,91 +1,161 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
   <RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style lang="scss" scoped>
+* {
+  text-decoration: none;
+}
+img {
+  width: 160px;
+  height: 160px;
+}
+body {
+  background-color: #1b1b1b;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif, 微軟正黑體;
+}
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 20px;
+}
+.header p {
+  font-size: 25px;
+}
+.header h2 {
+  font-size: 30px;
+  color: #f8b700;
+  margin: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+/* interface*/
 
-nav {
-  width: 100%;
-  font-size: 12px;
+.interface {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 30px;
+  background-color: black;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.interface-text {
+  margin: 15px auto;
+}
+.interface-text h3 {
+  color: #f8b700;
+  font-size: 24px;
+}
+.interface-text p {
+  line-height: 30px;
+}
+.interface-in {
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.interface-in:hover {
+  background-color: #211510;
+}
+.interface-in:active {
+  background-color: #211510;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+@media only screen and (min-width: 1000px) {
+  .interface {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+  .interface-in {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    text-align: start;
+  }
+  .interface-text {
+    margin-left: 20px;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .interface-text h3 {
+    margin-top: 0;
+  }
+  .interface-text p {
+    line-height: 30px;
+    margin: 0 auto;
+  }
+}
+
+/* pre-fight*/
+
+.pre-fight {
+  display: inline-flex;
+  background-color: black;
+  width: 100%;
+}
+.pre-fight img {
+  padding: 35px;
+  margin: 20px 30px 0 0;
+}
+
+.pre-fight-text {
+  margin-right: 50px;
+}
+.pre-fight h3 {
+  color: #f8b700;
+  font-size: 30px;
+}
+.pre-fight p {
+  font-size: 20px;
+}
+
+.action {
+  background-color: #3c1d3c;
+  text-align: center;
+  line-height: 50px;
+}
+.action a {
+  color: aliceblue;
+  font-size: 40px;
+}
+.action:hover {
+  background-color: #a00637;
+}
+
+.arena {
+  width: 100%;
+  height: 180px;
+  background-color: #1d373d;
+  background-image: url("img/arena.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  visibility: hidden;
+}
+
+/*enemy*/
+.enemy {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .interface {
+    width: 1000px;
+    margin: 0px auto 20px auto;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  .enemy {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>
