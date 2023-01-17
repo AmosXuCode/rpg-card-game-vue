@@ -1,16 +1,12 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import type { HeroType, MonsterType } from "@/interface/character";
+import type { PotionType } from "@/interface/consumables";
 
 export const useCharacterStore = defineStore("character", () => {
-  const currentHero = ref<{
-    hero: HeroType;
-    heroImg: string;
-  } | null>(null);
-  const currentEnemy = ref<{
-    monster: MonsterType;
-    monsterImg: string;
-  } | null>(null);
+  const currentHero = ref<HeroType | null>(null);
+  const currentEnemy = ref<MonsterType | null>(null);
+  const currentPotions = ref<Array<PotionType>>([]);
 
   const resetHero = () => {
     currentHero.value = null;
@@ -18,5 +14,5 @@ export const useCharacterStore = defineStore("character", () => {
   const resetEnemy = () => {
     currentEnemy.value = null;
   };
-  return { currentHero, currentEnemy, resetHero, resetEnemy };
+  return { currentHero, currentPotions, currentEnemy, resetHero, resetEnemy };
 });
